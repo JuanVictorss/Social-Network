@@ -13,7 +13,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
-    e.preventDefault(); // Correção aqui
+    e.preventDefault();
     try {
       const data = await register(name, email, password);
       setSuccess(data.message);

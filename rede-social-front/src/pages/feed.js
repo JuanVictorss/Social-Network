@@ -3,7 +3,7 @@ import { getCurrentUser } from "../services/authService";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true); // Estado de carregamento
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -27,7 +27,7 @@ const Feed = () => {
         } catch (error) {
           console.error(error);
         } finally {
-          setLoading(false); // Finaliza o estado de carregamento
+          setLoading(false);
         }
       }
     };
@@ -36,7 +36,7 @@ const Feed = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>; // Mensagem de carregamento
+    return <p>Loading...</p>;
   }
 
   return (
@@ -44,28 +44,9 @@ const Feed = () => {
       <h1>Feed</h1>
       {posts.length > 0 ? (
         posts.map((post) => (
-          <div
-            key={post._id}
-            className="post"
-            style={{
-              marginBottom: "20px",
-              border: "1px solid #ddd",
-              padding: "10px",
-              borderRadius: "5px",
-            }}
-          >
+          <div key={post._id} className="post">
             <h2>{post.description}</h2>
-            {post.image && (
-              <img
-                src={post.image}
-                alt="Post visual"
-                style={{
-                  width: "100%",
-                  maxHeight: "400px",
-                  objectFit: "cover",
-                }}
-              />
-            )}
+            {post.image && <img src={post.image} alt="Post visual" />}
             <p>Likes: {post.likes.length}</p>
             <div>
               <h3>Comments</h3>
