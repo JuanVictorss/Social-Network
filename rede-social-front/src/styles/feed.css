@@ -1,0 +1,30 @@
+.feed-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+}
+.post {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: 1080px;
+  align-items: center;
+  background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+  border-radius: 20px;
+  margin: 1rem 0rem;
+  box-shadow: 10px 10px 10px #00000056;
+}
+
+.feed-image {
+  width: 60%;
+  max-width: 1080px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.likes {
+  width: 60%;
+}

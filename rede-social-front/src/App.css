@@ -30,10 +30,17 @@
 }
 
 .links a {
-  display: block;
+  display: flex;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-top: 10px;
+
   text-decoration: none;
   padding: 10px;
-  background-color: #007bff;
   border-radius: 20px;
   font-size: 12px;
 }

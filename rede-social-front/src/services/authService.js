@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://192.168.0.4:5000/api/";
+const API_URL = "http://localhost:5000/api/";
 
 export const register = async (name, email, password) => {
   try {
@@ -23,6 +23,7 @@ export const login = async (email, password) => {
     });
     if (response.data.token) {
       localStorage.setItem("user", JSON.stringify(response.data));
+      localStorage.setItem("login", true);
     }
     return response.data;
   } catch (err) {
@@ -33,8 +34,12 @@ export const login = async (email, password) => {
 
 export const logout = () => {
   localStorage.removeItem("user");
+  localStorage.setItem("login", false);
 };
 
 export const getCurrentUser = () => {
   return JSON.parse(localStorage.getItem("user"));
+};
+export const getLoginState = () => {
+  return JSON.parse(localStorage.getItem("login"));
 };

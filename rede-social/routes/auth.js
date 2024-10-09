@@ -32,7 +32,7 @@ router.post(
 
 router.post(
   "/login",
-  loginLimiter,
+
   [
     body("email").isEmail().withMessage("Invalid Email"),
     body("password").notEmpty().withMessage("Password is mandatory"),

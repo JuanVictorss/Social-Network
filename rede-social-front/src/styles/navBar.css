@@ -1,0 +1,14 @@
+nav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: auto;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+}
+
+.link {
+  padding: 15px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
